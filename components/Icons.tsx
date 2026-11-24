@@ -16,7 +16,10 @@ export type IconName =
   | "hook"
   | "search"
   | "user"
-  | "message";
+  | "message"
+  | "badge"
+  | "gauge"
+  | "flask";
 
 type Props = SVGProps<SVGSVGElement> & { name: IconName };
 
@@ -122,4 +125,23 @@ const paths: Record<IconName, ReactNode> = {
     </>
   ),
   message: <path d="M5 6h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H9l-4 3v-3H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z" />,
+  badge: (
+    <>
+      <circle cx="12" cy="8.5" r="4.5" />
+      <path d="M8.2 12.2 7 20.5 12 18l5 2.5-1.2-8.3" />
+    </>
+  ),
+  gauge: (
+    <>
+      <path d="M5 16a7 7 0 1 1 14 0" />
+      <path d="M12 16 15.2 11" />
+      <circle cx="12" cy="16" r="1" />
+    </>
+  ),
+  flask: (
+    <>
+      <path d="M9 3h6M10 3v5.5L6 19.2A2 2 0 0 0 7.8 22h8.4a2 2 0 0 0 1.8-2.8L14 8.5V3" />
+      <path d="M8.2 14.5h7.6" />
+    </>
+  ),
 };

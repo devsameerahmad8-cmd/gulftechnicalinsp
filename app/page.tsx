@@ -2,33 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Icon, IconBadge, type IconName } from "@/components/Icons";
-import { company, telHref } from "@/lib/site";
-
-const services: {
-  href: string;
-  title: string;
-  copy: string;
-  image: string;
-  alt: string;
-  icon: IconName;
-}[] = [
-  {
-    href: "/services/inspection",
-    title: "Field inspection",
-    copy: "Cranes, lifting accessories, pressure systems, and welded structures, reviewed on site and written up in plain language.",
-    image: "/images/inspection.jpg",
-    alt: "Gloved hands checking a crane hook",
-    icon: "clipboard",
-  },
-  {
-    href: "/services/training",
-    title: "Crew training",
-    copy: "Short courses for riggers, supervisors, and inspectors, built around the equipment your teams already use.",
-    image: "/images/training.jpg",
-    alt: "A crew reviewing an equipment drawing",
-    icon: "users",
-  },
-];
+import { ServiceCard } from "@/components/ServiceCard";
+import { company, serviceLinks, telHref } from "@/lib/site";
 
 const steps: { title: string; copy: string; icon: IconName }[] = [
   { title: "Call the desk", copy: "Tell us the site, the equipment, and the date you need someone there.", icon: "phone" },
@@ -103,20 +78,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-5 px-4 py-6 sm:px-6 md:grid-cols-2">
-        {services.map((service) => (
-          <Link key={service.href} href={service.href} className="glass group overflow-hidden rounded-[2rem] transition hover:bg-white/75">
-            <div className="relative h-52">
-              <Image src={service.image} alt={service.alt} fill className="object-cover transition duration-500 group-hover:scale-[1.03]" sizes="(min-width: 768px) 50vw, 100vw" />
-            </div>
-            <div className="p-5 sm:p-8">
-              <IconBadge name={service.icon} />
-              <h2 className="mt-4 text-2xl font-extralight text-ink sm:text-3xl">{service.title}</h2>
-              <p className="mt-3 max-w-md text-sm leading-7 font-light text-muted">{service.copy}</p>
-              <span className="mt-6 inline-flex text-sm font-light text-sea">Read more</span>
-            </div>
-          </Link>
-        ))}
+      <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+        <p className="text-[11px] font-light tracking-[0.22em] text-[#6d8794] uppercase sm:tracking-[0.28em]">Services</p>
+        <h2 className="mt-3 max-w-xl text-3xl font-extralight tracking-tight text-ink sm:text-4xl">Six ways we support a site.</h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {serviceLinks.map((service) => (
+            <ServiceCard key={service.href} {...service} />
+          ))}
+        </div>
       </section>
 
       <section className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-8 sm:px-6 lg:grid-cols-2">
