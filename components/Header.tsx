@@ -65,7 +65,7 @@ export function Header() {
                 Services
                 <span className="ml-1 text-[10px] text-sand">▾</span>
               </Link>
-              <div className="invisible absolute top-full left-1/2 z-20 w-64 -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+              <div className="invisible absolute top-full left-1/2 z-20 w-80 -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                 <div className="glass rounded-2xl p-2">
                   {serviceLinks.map((item) => (
                     <Link

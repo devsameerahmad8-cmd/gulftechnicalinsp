@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { ServiceAside } from "@/components/ServiceAside";
@@ -7,11 +8,13 @@ export function ServiceDetail({
   lede,
   points,
   active,
+  panel,
 }: {
   title: string;
   lede: string;
   points: { title: string; copy: string }[];
   active: string;
+  panel?: ReactNode;
 }) {
   return (
     <>
@@ -23,6 +26,7 @@ export function ServiceDetail({
             <h2 className="text-3xl font-extralight tracking-tight text-ink">{title}</h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 font-light text-muted">{lede}</p>
           </div>
+          {panel}
           <div className="space-y-4">
             {points.map((point) => (
               <p key={point.title} className="text-sm leading-7 font-light text-muted">

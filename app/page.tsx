@@ -80,7 +80,7 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
         <p className="text-[11px] font-light tracking-[0.22em] text-[#6d8794] uppercase sm:tracking-[0.28em]">Services</p>
-        <h2 className="mt-3 max-w-xl text-3xl font-extralight tracking-tight text-ink sm:text-4xl">Six ways we support a site.</h2>
+        <h2 className="mt-3 max-w-xl text-3xl font-extralight tracking-tight text-ink sm:text-4xl">Seven ways we support a site.</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {serviceLinks.map((service) => (
             <ServiceCard key={service.href} {...service} />

@@ -19,7 +19,13 @@ export type IconName =
   | "message"
   | "badge"
   | "gauge"
-  | "flask";
+  | "flask"
+  | "forklift"
+  | "scaffold"
+  | "harness"
+  | "elevator"
+  | "vessel"
+  | "container";
 
 type Props = SVGProps<SVGSVGElement> & { name: IconName };
 
@@ -41,10 +47,18 @@ export function Icon({ name, className = "h-5 w-5", ...props }: Props) {
   );
 }
 
-export function IconBadge({ name }: { name: IconName }) {
+export function IconBadge({
+  name,
+  className = "h-11 w-11",
+  iconClassName = "h-5 w-5",
+}: {
+  name: IconName;
+  className?: string;
+  iconClassName?: string;
+}) {
   return (
-    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-white/80 bg-white/60 text-sea">
-      <Icon name={name} />
+    <span className={`grid shrink-0 place-items-center rounded-2xl border border-white/80 bg-white/60 text-sea ${className}`}>
+      <Icon name={name} className={iconClassName} />
     </span>
   );
 }
@@ -142,6 +156,48 @@ const paths: Record<IconName, ReactNode> = {
     <>
       <path d="M9 3h6M10 3v5.5L6 19.2A2 2 0 0 0 7.8 22h8.4a2 2 0 0 0 1.8-2.8L14 8.5V3" />
       <path d="M8.2 14.5h7.6" />
+    </>
+  ),
+  forklift: (
+    <>
+      <path d="M4 16V10h7v6" />
+      <path d="M11 12h3.2V7.5H19" />
+      <path d="M16.2 7.5V16" />
+      <circle cx="6.2" cy="17.2" r="1.5" />
+      <circle cx="14.2" cy="17.2" r="1.5" />
+    </>
+  ),
+  scaffold: (
+    <>
+      <path d="M6 3.5v17M18 3.5v17" />
+      <path d="M6 8h12M6 12.5h12M6 17h12" />
+    </>
+  ),
+  harness: (
+    <>
+      <circle cx="12" cy="5" r="2" />
+      <path d="M9 9.5h6l1 4.5-2.2 1.2V20M9 9.5 8 14l2.2 1.2V20" />
+      <path d="M9.2 12.2h5.6" />
+    </>
+  ),
+  elevator: (
+    <>
+      <rect x="7" y="3" width="10" height="18" rx="1.2" />
+      <path d="M12 8v3.2M10.4 9.2 12 7.6l1.6 1.6" />
+      <path d="M9.2 16.5h5.6" />
+    </>
+  ),
+  vessel: (
+    <>
+      <path d="M4 13a3.5 3.5 0 0 1 3.5-3.5h9a3.5 3.5 0 0 1 0 7h-9A3.5 3.5 0 0 1 4 13z" />
+      <path d="M8 16.5v2.2M16 16.5v2.2M17.5 9.5V6.2H20" />
+    </>
+  ),
+  container: (
+    <>
+      <rect x="3" y="6" width="18" height="12" rx="1" />
+      <path d="M7.5 6v12M12 6v12M16.5 6v12" />
+      <path d="M3 9.2H1.8M22.2 9.2H21M3 14.8H1.8M22.2 14.8H21" />
     </>
   ),
 };
