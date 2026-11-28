@@ -80,14 +80,6 @@ export const serviceLinks: {
     image: "/images/testing.jpg",
     alt: "A surveyor checking a weld with dye penetrant",
   },
-  {
-    href: "/services/certificate-verification",
-    label: "Testing Certificate Verification",
-    copy: "A check that a testing certificate still matches the item, the method, and the date, before a site relies on it.",
-    icon: "file",
-    image: "/images/certificate-verification.jpg",
-    alt: "Hands comparing a testing certificate with a metal sample and a gauge",
-  },
 ];
 
 export function telHref(phone: string) {

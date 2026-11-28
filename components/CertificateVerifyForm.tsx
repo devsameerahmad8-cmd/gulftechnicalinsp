@@ -7,6 +7,7 @@ const types = [
   { id: "equipment", label: "Equipment Certification" },
   { id: "operator", label: "Operator Certification" },
   { id: "training", label: "Training Certification" },
+  { id: "ndt", label: "NDT and TUV certificate Verification" },
 ] as const;
 
 type Kind = (typeof types)[number]["id"];
@@ -48,6 +49,15 @@ const records: Record<
     scope: "Lifting supervisor course",
     issued: "19 January 2026",
     office: "Riyadh",
+    status: "Valid",
+  },
+  ndt: {
+    card: "GTI-NDT-312",
+    sticker: "ST-4410",
+    holder: "Sample Fabrication",
+    scope: "NDT and TUV certificate review",
+    issued: "2 March 2026",
+    office: "Dammam",
     status: "Valid",
   },
 };
